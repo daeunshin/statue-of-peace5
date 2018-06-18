@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<title>Statue of peace</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,300i,400,500,500i,700" rel="stylesheet">
+
+	<button onclick="topFunction()" id="myBtn" title="Go to top">∆ Top</button>
+
+	<style>
+		*{font-family: 'Roboto', 'Roboto Condensed';}
+		html{font-family: 'Roboto', 'Roboto Condensed';}
+
+/*메뉴바*/
+		a:link, a:visited, a:active {text-decoration: none; color: white;}
+		nav{width: 100%;  position: fixed; margin : auto; height: 44px; background: black; opacity: 0.7; z-index: 9999; top:0;}
+		nav #logo {width: 200px;  height: 45px; text-align: center; line-height: 44px; float: left;}
+		nav #logo img{width: 37px; height: 32px; padding-top: 6px; margin: auto;}
+		nav #logo a{display: block; height: 44px; }
+		nav #logo a:hover {background: #737373; color: white;}
+		nav #mainNav{ float: right; margin: 0; padding: 0;}
+		nav #mainNav li {float: left; width: 130px; list-style: none; height: 44px;}
+		nav #mainNav a{ display: block; line-height: 44px; text-align: center; }
+		nav #mainNav a:hover{background: #737373; color: white;}
+
+	
+/*배경이미지*/	
+		#back{width: 100%; position: absolute;}
+
+/*헤더*/	
+		header{width: 1200px; height: 360px; margin: auto; position: relative; top:0px; padding-top: 12em;}
+		header h1{font-size: 6.5em; line-height: 1em; margin:0; padding-bottom: 50px; font-weight: 700; letter-spacing: -0.7px; }
+		header h2{margin: 0; font-size: 2em; font-weight: 400; padding-bottom: 15px; padding-left: 0.1em;}
+
+		#bline{background: black; height: 3px; width: 800px; overflow: hidden; z-index: 9999; margin-left: -180px; margin-top: -10px; margin-bottom: 0.5em;}
+
+		/*#bline{background: black; height: 3px; float: right; width: 800px; overflow: hidden; margin-right: 40em;}*/
+
+
+		span, img{display: block; overflow: hidden;}
+		img{width: 100%;}
+
+/*메인메뉴*/
+		#first {width: 1050px; margin: auto; margin-bottom: 19em;}
+		#first img {width: 100%; margin: auto;}
+		#first h2 {font-size: 3.76em; padding-top: 1.3em; line-height:1.3;}
+		#first p {font-size: 1.2em; line-height: 1.8; margin-top: -1.4em;}
+
+/*이미지박스*/
+		section{width: 770px; margin: auto; margin-top: 3em; margin-bottom: 130px;}
+		section: after{content: ""; display: block; clear: both; }
+
+		.col3{width: 30%; margin:1.65%;}
+		.col3 img {width: 268px;}
+		.section-texts{padding: 1.65%; padding-left: 3em;}
+
+		.section-texts h2{margin: 0em; margin-bottom: 0.1em; padding-top: 10px; font-size: 4.5em;}
+		.section-texts p{margin: 0em; line-height: 1.6; font-size: 1.2em; padding-left: 5px;}
+
+
+
+		.left {float: left; padding-right: 50px;}
+		.right {float: right; padding-left: 55px;}
+
+
+/*지도*/
+		#last {width: 1050px; margin: auto; margin-top: 18em; margin-bottom: 25em;}
+		#last h1{font-size: 4em;}
+		#last p{font-size: 1.2em; padding-top: 2em;line-height: 1.8;}
+
+/*푸터*/
+		footer{background: black; width: 100%; height: 430px; margin: auto; padding-bottom: 1em;}
+
+		#yline{background: #ffcb31; height: 3px; overflow: hidden;}
+		#footer{width: 1200px; height: 416px; margin: auto;}
+
+		#footer_left{width: 385px; float: left; padding-top: 5em; padding-left: 2em;}
+		#footer_left h1 {color: #EEE; font-size:2em; font-weight: 300; font-style: italic; padding-top: 1.6em; padding-bottom: 1em; line-height: 1.5em; text-align: left}
+		#footer_left p {color: #EEE; line-height: 1.8; font-size: 1em; font-family: Rovoto+Condensed; font-weight: 300; padding-top: 1em;}
+
+		#footer_right{width: 570px; float: right; padding-top: 2em; padding-right: 2em;}
+		#footer_right img {width: 500px;}
+		#footer_right p{color: #EEE; font-size: 1em; line-height: 1.8; font-family: Rovoto+Condensed; font-weight: 300; padding-top: 2.5em; padding-right: 2em;}
+
+		#myBtn {
+			    display: none; /* Hidden by default */
+			    position: fixed; /* Fixed/sticky position */
+			    bottom: 20px; /* Place the button at the bottom of the page */
+			    right: 30px; /* Place the button 30px from the right */
+			    z-index: 99; /* Make sure it does not overlap */
+			    border: none; /* Remove borders */
+			    outline: none; /* Remove outline */
+			    background: none; /* Set a background color */
+			    color: #727272; /* Text color */
+			    cursor: pointer; /* Add a mouse pointer on hover */
+			    padding: 15px; /* Some padding */
+			    border-radius: 10px; /* Rounded corners */
+			    font-size: 18px; /* Increase font size */
+				}
+
+		#myBtn:hover {color: #2D2D2D;}
+
+	</style>
+</head>
+
+<body>
+	<!--  메뉴바 소녀상 -->
+		<nav>
+			<div id="logo">
+				<a href="" target="_blank"> <img src="butterfly.png"> </a>
+			</div>
+			<ul id="mainNav">
+			<li class="menuItem">
+				<a href="" target="_blank"> Statue of peace</a>
+			</li>
+			<li class="menuItem">
+				<a href="https://daeunshin.github.io/their-voice4/" target="_blank"> Their voice</a>
+			</li>
+			<li class="menuItem">
+				<a href="https://daeunshin.github.io/story1/" target="_blank"> Story</a>
+			</li>
+		</nav>
+
+<!--
+<div id="img">
+			<img id="back" src="statue of peace.png">
+</div>
+-->
+
+<!--헤더-->
+	<header>
+		<h2>
+			statue of a young girl
+		</h2>
+		<div id="bline">
+			.
+		</div>
+		<h1>
+		Statue of <br>
+		peace
+		</h1>
+	</header>
+
+
+	<div id="first">
+		<img src="./img/statue_of_peace.png">
+		<h2>
+			Even if every victims leave us,<br>
+			this girl will observe history to the end.
+		</h2>
+		<p>
+			The young girl sits on a wooden chair, her fists balled in her lap. She looks impassively forward, her expression unsmiling and determined. Her feet are bare, and on her shoulder sits a small bird. The girl represents those who were forcefully and systematically sexually abused by Japanese during WWII.
+		</p>
+			
+	</div>
+<!--메인박스-->
+<section>
+		<div class="col3 left">
+			<img src="./img/hair.png">
+		</div>
+		<span class="section-texts">
+			<h2>Hair</h2>
+			<p>
+				In those days, cutting hair was an absolute impossibility for Korean because hair was part of their body that their parents handed to them.
+				And the statue's roughly cropped hair shows how these girls had their relationships with their family, hometown cut off against their will.
+			</p>
+		</span>
+	</section>
+
+	<section>
+		<div class="col3 right">
+			<img src="./img/bird.png">
+		</div>
+		<span class="section-texts">
+			<h2>Bird</h2>
+			<p>
+				The bird is a symbol of peace, freedom and liberation. It connects those victims who 'returned to the sky' without Japan's official apology and restitution and the ones who are still left on the ground.
+			</p>
+		</span>
+	</section>
+	
+	<section>
+		<div class="col3 left">
+			<img src="./img/fists.png">
+		</div>
+		<span class="section-texts">
+			<h2>Fists</h2>
+			<p>
+				The clenched fists represent how the victims will no longer stay silent about Japan's war crimes and want to tell the truth. It means strong will for peaceful world.<br><br>
+			</p>
+		</span>
+	</section>
+
+		<section>
+		<div class="col3 right">
+			<img src="./img/shadow.png">
+		</div>
+		<span class="section-texts">
+			<h2>Shadow</h2>
+			<p>
+				Despite the statue being a girl, its shadow is that of an old woman. It represents the hardship the victims had to suffer all this time. <br> <br>
+			</p>
+		</span>
+	</section>
+
+	<section>
+		<div class="col3 left">
+			<img src="./img/butterfly.png">
+		</div>
+		<span class="section-texts">
+			<h2>Butterfly</h2>
+			<p>
+				A white butterfly in the shadow's heart position represents reborn. We hope victims who already passed away without ease their deep-rooted grudge reborn at better world and fly at there. <br>
+			</p>
+		</span>
+	</section>
+			<section>
+		<div class="col3 right">
+			<img src="./img/heels.png">
+		</div>
+		<span class="section-texts">
+			<h2>Heels</h2>
+			<p>
+				The heels are unattached to the ground, this represents the unstable lives of the victims regarded as 'sluts' or 'prostitutes' and treated coldly by society. <br><br>
+			</p>
+		</span>
+	</section>
+
+	<section>
+		<div class="col3 left">
+			<img src="./img/empty.png">
+		</div>
+		<span class="section-texts">
+			<h2>Empty chair</h2>
+			<p>
+				The empty chair means vacancy of victims who already passed away. Also anyone can sit in the shoes of the victims and think 'what if it was me?' 'what if it was my family or my sister?' <br>
+			</p>
+		</span>
+	</section>
+
+	<div id ="last">
+		<h1>The map of Statue of peace</h1>
+
+			<iframe src="https://www.google.com/maps/d/embed?mid=1mcMDBbNdoLJNvbLvoqFx9dJZi6o" width="1050" height="500"></iframe>
+		
+		<p>
+			At 1000th day of Wednesday assembly, December 14, 2011, the first Statue of peace is putted up to remember sadness of wartime and Japanese military saxual slavery problem and for peace. <br><br>
+			After first Statue of peace, there are more Statue of peaces are putted up at Korea, Canada and USA. The number of Statue of peace is increasing.There are 44 statue of peace in Korea and 4 Statue of peace at outside of Korea (December 14, 2016). 
+		</p>
+	</div>
+	
+	<footer>
+		<div id="footer">
+			<div id="footer_left">
+				<p>
+					Daeun Shin<br>
+					danee_e@naver.com
+				</p>
+				<div id="yline">
+					.
+				</div>
+				<h1>We want Japan’s sufficient apology and compensation.</h1>
+			</div>
+
+			<div id="footer_right">
+				<img src="./img/yellow.png">
+				<p>
+					As time passed, the memory of our wartime experiences is beginning to fade. Japan still didn’t acknowledge the fact that they did war crimes during wartime as true. For us, military sexual slavery is not the past but the on-going problem. I made this website to remember our painful history and inform everyone about the truth.
+				</p>
+			</div>
+		</div>
+	</footer>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+</html>
